@@ -9,18 +9,18 @@ const connectDB = require('./config/db');
 
 // Route imports
 const authRoutes = require('./routes/auth.routes');
-// const courseRoutes = require('./routes/course.routes');
-// const materialRoutes = require('./routes/material.routes');
-// const progressRoutes = require('./routes/progress.routes');
-// const sectionRoutes = require('./routes/section.routes');
-// const dashboardRoutes = require('./routes/dashboard.routes');
-// const codeRoutes = require('./routes/code.routes');
-// const certificateRoutes = require('./routes/certificate.routes');
+const courseRoutes = require('./routes/course.routes');
+const materialRoutes = require('./routes/material.routes');
+const progressRoutes = require('./routes/progress.routes');
+const sectionRoutes = require('./routes/section.routes');
+const dashboardRoutes = require('./routes/dasboard.routes');
+const codeRoutes = require('./routes/code.routes');
+const certificateRoutes = require('./routes/certificate.routes');
 // // const enrollmentRoutes = require('./routes/enrollment.routes');
-// const chatRoutes = require('./routes/chat.routes');
-// const assignmentRoutes = require('./routes/assignment.routes');
+const chatRoutes = require('./routes/chat.routes');
+const assignmentRoutes = require('./routes/assignment.routes');
 const createDefaultAdmin = require('./createDefaultAdmin'); 
-// const classroomRoutes = require('./routes/classroom.routes');
+const classroomRoutes = require('./routes/classroom.routes');
 
 dotenv.config();
 connectDB();
@@ -64,18 +64,18 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // API routes
 
-// app.use('/api', chatRoutes);
+app.use('/api', chatRoutes);
 
 app.use('/api/auth', authRoutes);
-// app.use('/api/courses', courseRoutes);
-// app.use('/api/materials', materialRoutes);
-// app.use('/api/progress', progressRoutes);
-// app.use('/api/sections', sectionRoutes);
-// app.use('/api/dashboard', dashboardRoutes);
-// app.use('/api/code', codeRoutes);
-// app.use('/api/certificates', certificateRoutes);
-// app.use('/api/assignments', assignmentRoutes);
-// app.use('/api/classrooms', classroomRoutes);
+app.use('/api/courses', courseRoutes);
+app.use('/api/materials', materialRoutes);
+app.use('/api/progress', progressRoutes);
+app.use('/api/sections', sectionRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/code', codeRoutes);
+app.use('/api/certificates', certificateRoutes);
+app.use('/api/assignments', assignmentRoutes);
+app.use('/api/classrooms', classroomRoutes);
 // // app.use('/api/enrollments', enrollmentRoutes);
 
 
